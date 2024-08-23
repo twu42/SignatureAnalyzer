@@ -96,6 +96,9 @@ def run_maf(
         for n_iter in range(nruns):
             store['X'] = spectra
 
+            if verbose:
+                print('run {}/{}'.format(n_iter+1, nruns))
+
             res = ardnmf(
                 spectra,
                 tag="\t{}/{}: ".format(n_iter,nruns-1),
@@ -224,6 +227,9 @@ def run_spectra(
         print("   * Running ARD-NMF...")
         for n_iter in range(nruns):
             store['X'] = spectra
+
+            if verbose:
+                print('run {}/{}'.format(n_iter+1, nruns))
 
             res = ardnmf(
                 spectra,
@@ -357,6 +363,9 @@ def run_matrix(
         print("   * Running ARD-NMF...")
         for n_iter in range(nruns):
             store['X'] = matrix
+
+            if verbose:
+                print('run {}/{}'.format(n_iter+1, nruns))
 
             res = ardnmf(
                 matrix,
